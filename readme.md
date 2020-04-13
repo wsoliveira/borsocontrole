@@ -45,7 +45,10 @@ de informação:
         -   $ python manage.py loaddata ./static/fixtures/initial_data.json
 
     - Rode projeto:        
-        -   $ python manage.py runserver        
+        -   $ python manage.py runserver
+        
+    - Existe teste criado para app companies
+        - $ python manage.py test        
 
 
     
