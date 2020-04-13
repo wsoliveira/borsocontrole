@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Taxes Discounted {% endblock %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block left %}
+<table class="table table-striped">
+    <h3>List Taxes Discounted</h3>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Tax</th>
+      <th scope="col">Discounted Price</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tb_value in tb_values %}
+        <tr>
+          <td>{{ tb_value.bc_tax.name }}</td>
+          <td>{{ tb_value.bc_tax.value }}%</td>
+          <td>{{ tb_value.discounted_price }}</td>
+          <td>{{ tb_value.date }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    <a href="{%url 'negotiation_list'%}" class="btn btn-dark">Back</a>
+{% endblock %}

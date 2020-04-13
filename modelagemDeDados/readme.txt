@@ -1,0 +1,1 @@
+Esse arquivo com extensão *.mwb é do MYSQL workbench, você pode baixar e instalar é free.

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} Taxes {% endblock %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block right %}
+<a href="{%url 'tax_new'%}" class="btn btn-dark">New</a>
+{% endblock %}
+
+{% block left %}
+<table class="table table-striped">
+    <h3>List Taxes</h3>
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group mb-3">
+                <input type="text" placeholder="..." , name="search" class="form-control">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark">Search</button>
+            </div>
+
+        </form>
+    </div>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Value</th>
+      <th scope="col">Description</th>
+      <th scope="col">Is Active</th>
+      <th scope="col">Type of Negotiation</th>
+      <th scope="col">Type of Investiment</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tb_value in tb_values %}
+        <tr>
+          <td><a href="{%url 'tax_update' tb_value.id %}">{{ tb_value.name }}</a></td>
+          <td>{{ tb_value.value }}</td>
+          <td>{{ tb_value.description }}</td>
+          <td>{{ tb_value.is_active }}</td>
+          <td>
+              {% for tb_negotiation in tb_value.bc_admin_type_negotiation.all %}
+                {{ tb_negotiation }}
+              {% endfor %}
+          </td>
+          <td>
+              {% for tb_investiment in tb_value.bc_admin_type_investiment.all %}
+                {{ tb_investiment }}
+              {% endfor %}
+          </td>
+          <td>
+            <a href="{%url 'tax_delete' tb_value.id %}" class="trash-item">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Companies {% endblock %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block right %}
+<a href="{%url 'company_new'%}" class="btn btn-dark">New</a>
+{% endblock %}
+
+{% block left %}
+<table class="table table-striped">
+    <h3>List Company</h3>
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group mb-3">
+                <input type="text" placeholder="..." , name="search" class="form-control">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark">Search</button>
+            </div>
+
+        </form>
+    </div>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Identification</th>
+      <th scope="col">Is New Market</th>
+      <th scope="col">Sector</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tb_value in tb_values %}
+        <tr>
+          <td><a href="{%url 'company_update' tb_value.id %}">{{ tb_value.name }}</a></td>
+          <td>{{ tb_value.identification }}</td>
+          <td>{{ tb_value.is_new_market }}</td>
+          <td>{{ tb_value.bc_sector.name }}</td>
+          <td>
+            <a href="{%url 'company_delete' tb_value.id %}" class="trash-item">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

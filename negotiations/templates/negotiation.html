@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %} Negotiations {% endblock %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block right %}
+<a href="{%url 'negotiation_new'%}" class="btn btn-dark">New</a>
+{% endblock %}
+
+{% block left %}
+<table class="table table-striped">
+    <h3>List Negotations</h3>
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group mb-3">
+                <input type="text" placeholder="Company Code" , name="search" class="form-control">
+            </div>
+            <div class="form-group mb-3" id="datetimepicker1" data-target-input="nearest">
+              <input type="text" placeholder="Start" data-target="#datetimepicker1", name="date_start" class="form-control"/>
+              <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+            <div class="form-group mb-3" id="datetimepicker2" data-target-input="nearest">
+              <input type="text" placeholder="End" data-target="#datetimepicker2", name="date_end" class="form-control"/>
+              <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark">Search</button>
+            </div>
+
+
+    <script>
+      $(function () {
+        $("#datetimepicker1").datetimepicker({
+          format: 'YYYY-MM-DD',
+        });
+        $("#datetimepicker2").datetimepicker({
+          format: 'YYYY-MM-DD',
+        });
+      });
+    </script>
+
+        </form>
+    </div>
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Negotiation</th>
+      <th scope="col">Type</th>
+      <th scope="col">Company Code</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Brokerage Price</th>
+      <th scope="col">Gross Total Price</th>
+      <th scope="col">Total Net Price</th>
+      <th scope="col">Average Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date Negotiation</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tb_value in tb_values %}
+        <tr>
+          <td><a href="{%url 'negotiation_update' tb_value.id %}">{{ tb_value.id }}</a></td>
+          <td>{{ tb_value.bc_admin_type_negotiation.name }}</td>
+          <td>{{ tb_value.bc_admin_type_investiment.name }}</td>
+          <td>{{ tb_value.bc_company_code.name }}</td>
+          <td>{{ tb_value.amount }}</td>
+          <td>{{ tb_value.unit_price }}</td>
+          <td>{{ tb_value.brokerage_price }}</td>
+          <td>{{ tb_value.gross_total_price }}</td>
+          <td><a href="{%url 'tax_negotiation_list' tb_value.id %}">{{ tb_value.total_net_price }}</a></td>
+          <td>{{ tb_value.average_price }}</td>
+          <td>{{ tb_value.description }}</td>
+          <td>{{ tb_value.date_negotiation }}</td>
+          <td>
+            <a href="{%url 'negotiation_delete' tb_value.id %}" class="trash-item">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

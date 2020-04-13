@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %} Investiments {% endblock %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block right %}
+{% include 'base_consolidated.html' %}
+{% endblock %}
+
+{% block left %}
+<table class="table table-striped">
+    <h3>List Investiments</h3>
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group mb-3">
+                <input type="text" placeholder="..." , name="search" class="form-control">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark">Search</button>
+            </div>
+        </form>
+    </div>
+  <thead>
+    <tr>
+      <th scope="col">Company Code</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Total Net Price</th>
+      <th scope="col">Average Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Is Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tb_value in tb_values %}
+        <tr>
+          <td>{{ tb_value.bc_company_code.name }}</a></td>
+          <td>{{ tb_value.amount }}</td>
+          <td>{{ tb_value.total_net_price }}</td>
+          <td>{{ tb_value.average_price }}</td>
+          <td>{{ tb_value.description }}</td>
+          <td>{{ tb_value.is_active }}</td>
+          <td>
+            <a href="{%url 'investiment_delete' tb_value.id %}" class="trash-item">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

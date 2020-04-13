@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Taxes {% endblock %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock %}
+{% block main %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
+    <form method="POST", enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        {% bootstrap_button "Save" button_type="submit" button_class="btn btn-dark" %}
+        <a href="{%url 'tax_list'%}" class="btn btn-dark">Back</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,687 @@
+[
+{
+  "model": "administrators.bc_admin_type_investiment",
+  "pk": 1,
+  "fields": {
+    "name": "Stock",
+    "description": "Stock Market",
+    "is_active": true,
+    "date": "2020-04-13T19:38:27Z"
+  }
+},
+{
+  "model": "administrators.bc_admin_type_investiment",
+  "pk": 2,
+  "fields": {
+    "name": "Fixed Income",
+    "description": "Fixed income investment",
+    "is_active": true,
+    "date": "2020-04-13T19:38:47Z"
+  }
+},
+{
+  "model": "administrators.bc_admin_type_investiment",
+  "pk": 3,
+  "fields": {
+    "name": "Investment Funds",
+    "description": "Investment Funds",
+    "is_active": true,
+    "date": "2020-04-13T19:39:42Z"
+  }
+},
+{
+  "model": "administrators.bc_admin_type_investiment",
+  "pk": 4,
+  "fields": {
+    "name": "Direct Treasure",
+    "description": "National Treasury",
+    "is_active": true,
+    "date": "2020-04-13T19:40:06Z"
+  }
+},
+{
+  "model": "administrators.bc_admin_type_investiment",
+  "pk": 5,
+  "fields": {
+    "name": "Options Market",
+    "description": "Options Market",
+    "is_active": true,
+    "date": "2020-04-13T19:40:27Z"
+  }
+},
+{
+  "model": "administrators.bc_admin_type_negotiation",
+  "pk": 1,
+  "fields": {
+    "name": "Purchase",
+    "description": "Buying",
+    "is_active": true,
+    "date": "2020-04-13T19:42:03Z"
+  }
+},
+{
+  "model": "administrators.bc_admin_type_negotiation",
+  "pk": 2,
+  "fields": {
+    "name": "Sell",
+    "description": "Selling",
+    "is_active": true,
+    "date": "2020-04-13T19:42:12Z"
+  }
+},
+{
+  "model": "taxes.bc_tax",
+  "pk": 1,
+  "fields": {
+    "name": "Emolumentos",
+    "value": "0.0050",
+    "description": null,
+    "is_active": true,
+    "date": "2020-04-13T19:43:43Z",
+    "bc_admin_type_negotiation": [
+      1,
+      2
+    ],
+    "bc_admin_type_investiment": [
+      1,
+      5
+    ]
+  }
+},
+{
+  "model": "taxes.bc_tax",
+  "pk": 2,
+  "fields": {
+    "name": "IR Reten\u00e7\u00e3o Corretora",
+    "value": "0.0050",
+    "description": "famoso dedo duro para Receita Federal",
+    "is_active": true,
+    "date": "2020-04-13T19:45:33Z",
+    "bc_admin_type_negotiation": [
+      2
+    ],
+    "bc_admin_type_investiment": [
+      1,
+      5
+    ]
+  }
+},
+{
+  "model": "taxes.bc_tax",
+  "pk": 3,
+  "fields": {
+    "name": "Taxa de Liquida\u00e7\u00e3o",
+    "value": "0.0200",
+    "description": "taxa liquida\u00e7\u00e3o na compra",
+    "is_active": true,
+    "date": "2020-04-13T19:46:10Z",
+    "bc_admin_type_negotiation": [
+      1
+    ],
+    "bc_admin_type_investiment": [
+      1,
+      5
+    ]
+  }
+},
+{
+  "model": "taxes.bc_tax",
+  "pk": 4,
+  "fields": {
+    "name": "Aliquota DayTrade",
+    "value": "20.0000",
+    "description": "Day Trader",
+    "is_active": true,
+    "date": "2020-04-13T19:48:02Z",
+    "bc_admin_type_negotiation": [
+      2
+    ],
+    "bc_admin_type_investiment": [
+      1,
+      5
+    ]
+  }
+},
+{
+  "model": "companies.bc_sector",
+  "pk": 1,
+  "fields": {
+    "name": "Bancario",
+    "description": "Bancario",
+    "is_active": true,
+    "date": "2020-04-13T19:48:53Z"
+  }
+},
+{
+  "model": "companies.bc_sector",
+  "pk": 2,
+  "fields": {
+    "name": "Governo",
+    "description": "Usado para Tesouro Direto",
+    "is_active": true,
+    "date": "2020-04-13T20:00:50Z"
+  }
+},
+{
+  "model": "companies.bc_sector",
+  "pk": 3,
+  "fields": {
+    "name": "Petroleo",
+    "description": "Petroleo",
+    "is_active": true,
+    "date": "2020-04-13T20:08:03Z"
+  }
+},
+{
+  "model": "companies.bc_company",
+  "pk": 1,
+  "fields": {
+    "name": "Ita\u00fasa \u2013 Investimentos Ita\u00fa S.A",
+    "identification": "000000",
+    "is_new_market": true,
+    "date": "2020-04-13T19:49:12Z",
+    "is_active": true,
+    "bc_sector": 1
+  }
+},
+{
+  "model": "companies.bc_company",
+  "pk": 2,
+  "fields": {
+    "name": "Republica Federativa do Brasil",
+    "identification": "00000000",
+    "is_new_market": true,
+    "date": "2020-04-13T20:01:16Z",
+    "is_active": true,
+    "bc_sector": 2
+  }
+},
+{
+  "model": "companies.bc_company",
+  "pk": 3,
+  "fields": {
+    "name": "Banco Amazonas",
+    "identification": "00000000",
+    "is_new_market": true,
+    "date": "2020-04-13T20:04:40Z",
+    "is_active": true,
+    "bc_sector": 1
+  }
+},
+{
+  "model": "companies.bc_company",
+  "pk": 4,
+  "fields": {
+    "name": "rico.vc",
+    "identification": "00000000",
+    "is_new_market": true,
+    "date": "2020-04-13T20:06:28Z",
+    "is_active": true,
+    "bc_sector": 1
+  }
+},
+{
+  "model": "companies.bc_company",
+  "pk": 5,
+  "fields": {
+    "name": "Petroleo Brasileiro S.A. Petrobras",
+    "identification": "00000000",
+    "is_new_market": true,
+    "date": "2020-04-13T20:08:39Z",
+    "is_active": true,
+    "bc_sector": 3
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 1,
+  "fields": {
+    "name": "ITSA3",
+    "bc_admin_type_investiment": 1,
+    "date": "2020-04-13T19:49:28Z",
+    "is_active": true,
+    "bc_company": 1
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 2,
+  "fields": {
+    "name": "ITSA4",
+    "bc_admin_type_investiment": 1,
+    "date": "2020-04-13T19:49:37Z",
+    "is_active": true,
+    "bc_company": 1
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 3,
+  "fields": {
+    "name": "Tesouro Prefixado 20XX (LTN)",
+    "bc_admin_type_investiment": 4,
+    "date": "2020-04-13T20:03:20Z",
+    "is_active": true,
+    "bc_company": 2
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 4,
+  "fields": {
+    "name": "Tesouro Selic 20XX (LFT)",
+    "bc_admin_type_investiment": 4,
+    "date": "2020-04-13T20:03:28Z",
+    "is_active": true,
+    "bc_company": 2
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 5,
+  "fields": {
+    "name": "CDB-Banco Amazonas",
+    "bc_admin_type_investiment": 2,
+    "date": "2020-04-13T20:04:55Z",
+    "is_active": true,
+    "bc_company": 3
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 6,
+  "fields": {
+    "name": "Canvas Enduro III FIC FIM",
+    "bc_admin_type_investiment": 3,
+    "date": "2020-04-13T20:06:44Z",
+    "is_active": true,
+    "bc_company": 4
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 7,
+  "fields": {
+    "name": "PETRD19",
+    "bc_admin_type_investiment": 5,
+    "date": "2020-04-13T20:09:00Z",
+    "is_active": true,
+    "bc_company": 5
+  }
+},
+{
+  "model": "companies.bc_company_code",
+  "pk": 8,
+  "fields": {
+    "name": "PETRP142",
+    "bc_admin_type_investiment": 5,
+    "date": "2020-04-13T20:09:18Z",
+    "is_active": true,
+    "bc_company": 5
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2020-04-13T19:38:43.840Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Stock",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2020-04-13T19:39:42.306Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Fixed Income",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2020-04-13T19:40:05.845Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "3",
+    "object_repr": "Investment Funds",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2020-04-13T19:40:27.380Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "4",
+    "object_repr": "Direct Treasure",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2020-04-13T19:40:38.907Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "5",
+    "object_repr": "Options Market",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2020-04-13T19:42:11.931Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "Purchase",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2020-04-13T19:42:26.989Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "2",
+    "object_repr": "Sell",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2020-04-13T19:45:02.221Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Emolumentos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2020-04-13T19:45:33.578Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Emolumentos",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Bc admin type negotiation\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2020-04-13T19:46:10.347Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "IR Reten\u00e7\u00e3o Corretora",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2020-04-13T19:47:05.027Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Taxa de Liquida\u00e7\u00e3o",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2020-04-13T19:48:32.052Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Aliquota DayTrade",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2020-04-13T19:49:04.820Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Bancario",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2020-04-13T19:49:24.339Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Ita\u00fasa \u2013 Investimentos Ita\u00fa S.A",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2020-04-13T19:49:36.833Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "ITSA3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2020-04-13T19:49:46.806Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "ITSA4",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2020-04-13T20:01:08.425Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Governo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2020-04-13T20:02:17.659Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "Republica Federativa do Brasil",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2020-04-13T20:03:28.482Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "3",
+    "object_repr": "Tesouro Prefixado 20XX (LTN)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2020-04-13T20:03:49.551Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "4",
+    "object_repr": "Tesouro Selic 20XX (LFT)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2020-04-13T20:04:51.290Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "Banco Amazonas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2020-04-13T20:05:08.230Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "5",
+    "object_repr": "CDB-Banco Amazonas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2020-04-13T20:06:39.640Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "rico.vc",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2020-04-13T20:06:52.100Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "6",
+    "object_repr": "Canvas Enduro III FIC FIM",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2020-04-13T20:08:32.780Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Petroleo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2020-04-13T20:08:54.978Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "5",
+    "object_repr": "Petroleo Brasileiro S.A. Petrobras",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2020-04-13T20:09:18.177Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "7",
+    "object_repr": "PETRD19",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2020-04-13T20:09:35.414Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "8",
+    "object_repr": "PETRP142",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]

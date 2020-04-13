@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Pagina de login {% endblock %}
+
+{% block right %}
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-info">Login</button>
+        {# Assumes you setup the password_reset view in your URLconf #}
+        <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    </form>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted"><h4>BORSO CONTROLO</h4></span>
+      </div>
+    </footer>
+{% endblock %}

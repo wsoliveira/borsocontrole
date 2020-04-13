@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <h3>Consolidated</h3>
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Total Net Price</th>
+      <th scope="col">Consolidated</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for key, value in tb_consolidated.items %}
+        <tr>
+          <td>{{ key }}</td>
+          <td>{{ value.total }}</td>
+          <td>{{ value.consolidated }}%</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
