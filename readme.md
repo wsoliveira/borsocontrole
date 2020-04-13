@@ -27,7 +27,7 @@ de informação:
         -   $ mkdir ~/ProjetoBorsoControlo
         -   $ cd ~/ProjetoBorsoControlo
     - Baixar projeto do git:
-        -   $ git <<url>>
+        -   $ git clone https://github.com/wsoliveira/borsocontrolo.git
     - Crie virtual env e ative:
         -   $ virtualenv -p python3 .vEnv
         -   $ . .vEnv/bin/activate
