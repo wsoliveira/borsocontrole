@@ -4,6 +4,7 @@
 -   **Email:** ws.oliveira@gmail.com
 -   **Data:** 31/03/2020
 -   **Colaboradores:**
+-   **Site Example:** https://borsocontrolo.herokuapp.com/
 
 **De onde surgiu a ideia !**
 - Para fazer declaração do imposto de renda das ações da Bolsa de valores, você precisa juntar um punhado 
@@ -50,29 +51,11 @@ de informação:
     - Existe teste criado para app companies
         - $ python manage.py test        
 
-
+**Versões:**
+    - 13/04/2020 - v1.0.0
     
-    
+## Ajuda
 
-**Colaborações:**
-- Melhorias nos templates (css, html, forms, etc);
-- Tela de cadastro de usuário, usando padrão de usuário do django;
-    - https://docs.djangoproject.com/en/1.8/_modules/django/contrib/auth/forms/
-    - Precisa criar form para criação de novos usuários;
-- Implantação de um mecanismo de tradução (Português, Inglês), pesquisar em:
-    https://docs.djangoproject.com/en/3.0/topics/i18n/translation/
-    - Cheguei a fazer alguns testes no sector.html, mas não finalizei;
-- Encontrar uma API que retorne cotação da bovespa e atualizar em alguma tabela para ter um relatório de rentabilidade
- do que o usuário contem;
-- Talvez criar um mecanismo de alarmes, por exemplo:
-    -   Se é vendido mais que R$ 20k no mês de ação você precisa gerar um DARF para pagar IR, esse pode
-    ser um alarme interessante.
-    -   DayTrade tambem tem que ser gerado DARF;
-- Modulo para carregar todas negociacoes no app (negotiations) atráves de import de um arquivo .csv;
-- Criação de um dashbord gráfico do relatório "Consolidated":
-    - Graficos pizza:
-- Revisão/Continuação no testes unitários:
-    - Foi criado um teste unitário para 'sector':
-        - No '/companies/tests.py'
-- Na tela Investiments ou Negotiations criar um relatório/filtro por mês ou range de datas;
-    - Essa visão vai ajudar no lançamento do imposto de renda e na geração dos valores para DARF mensal;
+Para relatar bugs ou fazer perguntas utilize o [Issues](https://github.com/wsoliveira/borsocontrolo/issues) ou via email ws.oliveira@gmail.com
+
+Como este é um projeto em desenvolvimento, qualquer feedback será bem-vindo.    
