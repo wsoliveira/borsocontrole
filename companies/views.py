@@ -145,3 +145,8 @@ def company_code_delete(request, id):
         tb_values.save()
         return redirect('company_code_list')
     return render(request, 'company_code_delete_confirm.html', {'tb_values': tb_values})
+
+def company_code_loads(request):
+    bc_admin_type_investiment_id = request.GET.get('bc_admin_type_investiment',2)
+    tb_values = bc_company_code.objects.filter(bc_admin_type_investiment=bc_admin_type_investiment_id).order_by('name')
+    return render(request, 'company_code_dropdown_list_options.html', {'tb_values': tb_values})

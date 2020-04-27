@@ -10,7 +10,7 @@ class bc_tax(models.Model):
     is_active = models.BooleanField(default=True)
     date = models.DateTimeField(default=timezone.now, null=True)
     bc_admin_type_negotiation = models.ManyToManyField(to='administrators.bc_admin_type_negotiation')
-    bc_admin_type_investiment = models.ManyToManyField(to='administrators.bc_admin_type_investiment')
+    bc_admin_type_investiment = models.ManyToManyField(to='administrators.bc_admin_type_investiment', blank=True)
 
     def __str__(self):
         return self.name

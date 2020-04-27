@@ -9,6 +9,7 @@ from investiments.models import bc_investiment
 from .forms import NegotationForm
 from taxes.views import genericCalculates
 from administrators.models import bc_admin_type_investiment, bc_admin_type_negotiation
+from taxes.models import bc_tax_negotiation
 # Create your views here.
 
 @login_required
@@ -111,6 +112,8 @@ def negotiation_update(request, id):
     tb_values = get_object_or_404(bc_negotiation, pk=id)
     form = NegotationForm(request.POST or None, request.FILES or None, instance=tb_values)
     if form.is_valid():
+        tb_tax_negotiation = bc_tax_negotiation.objects.filter(bc_negotiation=tb_values)
+        tb_tax_negotiation.delete()
         form.save()
         calculaNegotiations(
             tb_values.id,

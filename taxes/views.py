@@ -10,6 +10,13 @@ from administrators.models import bc_admin_type_negotiation
 
 
 def genericCalculates(type_negotiation, id_negotiation, gross_total_price, type_investiment):
+    """
+    Se type_negotiation == SELL
+        Se existir outra negociacao de compra no mesmo dia para o (company_code e type_investiment=Stock or Options):
+            Se existir rentabilidade calcular aliquota sob a rentabilidade.
+            como vou conseguir o calculo de rentabilidade ?
+    """
+
     lst_taxes_names = bc_admin_type_negotiation.objects.filter(name=type_negotiation)
     sum_results = 0
     for name in lst_taxes_names:

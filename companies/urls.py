@@ -1,6 +1,7 @@
 from django.urls import path, include
 from .views import sector_list, sector_new, sector_update, sector_delete, company_list,\
-    company_new, company_update, company_delete, company_code_delete, company_code_list, company_code_new, company_code_update
+    company_new, company_update, company_delete, company_code_delete, company_code_list,\
+    company_code_new, company_code_update, company_code_loads
 
 urlpatterns = [
     path('sector/list/', sector_list, name='sector_list'),
@@ -15,4 +16,5 @@ urlpatterns = [
     path('company_code/new/', company_code_new, name='company_code_new'),
     path('company_code/update/<int:id>/', company_code_update, name='company_code_update'),
     path('company_code/delete/<int:id>/', company_code_delete, name='company_code_delete'),
+    path('company_code/loads/', company_code_loads, name='company_code_loads'),
 ]

@@ -52,7 +52,9 @@ de informação:
         - $ python manage.py test        
 
 **Versões:**
+
     - 13/04/2020 - v1.0.0
+    - 20/04/2020 - v1.0.1 - Melhorias nos formularios de cadastro
     
 ## Ajuda
 

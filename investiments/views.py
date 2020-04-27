@@ -24,6 +24,7 @@ def resumeNegotiations(request):
                     "amount_selling": 0,
                     "type": tb.bc_admin_type_investiment.name,
                     "company_code": tb.bc_company_code,
+                    "profitability": 0
                 }
             if tb.bc_admin_type_negotiation.name.upper() == 'PURCHASE':
                 dic_resume[tb.bc_company_code.name]['total_net_price_buying'] += float(tb.total_net_price)
@@ -41,6 +42,7 @@ def resumeNegotiations(request):
             dic_resume[company_code_name]['total_net_price_buying']-dic_resume[company_code_name]['total_net_price_selling']
         )
         total += total_net_price
+
         bc_investiment.objects.update_or_create(
             bc_company_code=dic_resume[company_code_name]['company_code'],
             bc_user=request.user,
@@ -55,7 +57,7 @@ def resumeNegotiations(request):
         )
         if dic_resume[company_code_name]['type'] not in dic_relatorio:
             dic_relatorio[dic_resume[company_code_name]['type']] = {
-                'total':float(total_net_price)
+                'total':round(total_net_price, 2)
             }
         else:
             dic_relatorio[dic_resume[company_code_name]['type']]['total'] += float(total_net_price)
@@ -72,9 +74,9 @@ def investiment_list(request):
     name = request.GET.get("search", None)
     page = request.GET.get('page', 1)
     if name:
-        tb_values = bc_investiment.objects.filter(bc_company_code__name__icontains=name, bc_user=request.user)
+        tb_values = bc_investiment.objects.filter(bc_company_code__name__icontains=name, bc_user=request.user).order_by("bc_company_code__name")
     else:
-        tb_values = bc_investiment.objects.filter(bc_user=request.user)
+        tb_values = bc_investiment.objects.filter(bc_user=request.user).order_by("bc_company_code__name")
 
     paginator = Paginator(tb_values, config('LIMIT_PAGINATION',default=15,cast=int))
     try:

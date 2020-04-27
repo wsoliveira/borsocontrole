@@ -8,10 +8,38 @@
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 {{ form.media }}
-    <form method="POST", enctype="multipart/form-data">
+     <form method="POST" id="negotiationForm" data-company-code-url="{% url 'company_code_loads' %}", enctype="multipart/form-data">
         {% csrf_token %}
         {% bootstrap_form form layout='horizontal' %}
         {% bootstrap_button "Save" button_type="submit" button_class="btn btn-dark" %}
         <a href="{%url 'negotiation_list'%}" class="btn btn-dark">Back</a>
     </form>
+
+  <!--<form method="POST" id="negotiationForm" data-company-code-url="{% url 'company_code_loads' %}" novalidate>
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Save</button>
+    <a href="{% url 'negotiation_list' %}">Nevermind</a>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+  <script>
+    $("#id_bc_admin_type_investiment").change(function () {
+      var url = $("#negotiationForm").attr("data-company-code-url");  // get the url of the `load_company_codes` view
+      var typeInvestimentId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'bc_admin_type_investiment': typeInvestimentId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_bc_company_code").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+  </script>
 {% endblock %}
