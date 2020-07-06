@@ -36,7 +36,7 @@ def resumeNegotiations(request):
     total = 0 #Variavel criada apenas para o grafico de consolidado
     for company_code_name in dic_resume:
         amount = 1
-        if dic_resume[company_code_name]['type'].upper() in ('STOCK','FII'):
+        if dic_resume[company_code_name]['type'].upper() in ('STOCK'):
             amount = (dic_resume[company_code_name]['amount_buying']-dic_resume[company_code_name]['amount_selling'])
         total_net_price = float(
             dic_resume[company_code_name]['total_net_price_buying']-dic_resume[company_code_name]['total_net_price_selling']
